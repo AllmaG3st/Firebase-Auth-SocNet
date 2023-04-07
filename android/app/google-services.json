@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "596906719604",
+    "project_id": "rn-firebase1-auth-soc-net",
+    "storage_bucket": "rn-firebase1-auth-soc-net.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596906719604:android:d700ca71199a452b749421",
+        "android_client_info": {
+          "package_name": "com.firebase1socnet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596906719604-391b7ff5t79nvq5gv7q1qk2ccrampmk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADqKbRKbMajGVz6q6JYl2w1T4BJcwP-dw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596906719604-391b7ff5t79nvq5gv7q1qk2ccrampmk1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "596906719604-ip07tl4flboru9kounpj2vq4878tcc7r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.firebase1socnet"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
