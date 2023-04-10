@@ -6,16 +6,23 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 
 //@ts-ignore
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
+import {AuthContext} from '../context/AuthProvider';
 
 const LoginScreen = ({navigation}) => {
   const [emailState, setEmailState] = useState('');
   const [passwordState, setPasswordState] = useState('');
+
+  const {login, googleLogin} = useContext(AuthContext);
+
+  const onLogin = () => {
+    login(emailState, passwordState);
+  };
 
   return (
     <View style={styles.container}>
@@ -43,7 +50,11 @@ const LoginScreen = ({navigation}) => {
         secureTextEntry
       />
 
-      <FormButton buttonTitle="Sign In" onPress={() => Alert.alert('HI')} />
+      <FormButton
+        buttonTitle="Sign In"
+        onPress={onLogin}
+        disabled={!emailState || !passwordState}
+      />
 
       <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
         <Text style={styles.navButtonText}>Forgot Password?</Text>
@@ -62,7 +73,7 @@ const LoginScreen = ({navigation}) => {
         btnType="google"
         color="#de4d41"
         backgroundColor="#f5e7ea"
-        onPress={() => Alert.alert('HI')}
+        onPress={googleLogin}
       />
 
       <TouchableOpacity

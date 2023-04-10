@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {
   View,
   Text,
@@ -10,11 +10,18 @@ import {
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
+import {AuthContext} from '../context/AuthProvider';
 
 const SignUpScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  const {register} = useContext(AuthContext);
+
+  const registerUser = () => {
+    register(email, password);
+  };
 
   return (
     <View style={styles.container}>
@@ -46,7 +53,11 @@ const SignUpScreen = ({navigation}) => {
         secureTextEntry={true}
       />
 
-      <FormButton buttonTitle="Sign Up" onPress={() => {}} />
+      <FormButton
+        buttonTitle="Sign Up"
+        onPress={registerUser}
+        disabled={!password || !email || !confirmPassword}
+      />
 
       <View style={styles.textPrivate}>
         <Text style={styles.color_textPrivate}>
