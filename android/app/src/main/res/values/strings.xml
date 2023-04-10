@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Firebase1Second</string>
+    <string name="facebook_app_id">138882372315972</string>
+    <string name="facebook_client_token">79214143a36fa631faaa2142b5b5ef18</string>
 </resources>

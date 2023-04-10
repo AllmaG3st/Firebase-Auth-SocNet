@@ -1,11 +1,4 @@
-import {
-  Alert,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useContext, useState} from 'react';
 
 //@ts-ignore
@@ -18,7 +11,7 @@ const LoginScreen = ({navigation}) => {
   const [emailState, setEmailState] = useState('');
   const [passwordState, setPasswordState] = useState('');
 
-  const {login, googleLogin} = useContext(AuthContext);
+  const {login, googleLogin, facebookLogin} = useContext(AuthContext);
 
   const onLogin = () => {
     login(emailState, passwordState);
@@ -65,7 +58,7 @@ const LoginScreen = ({navigation}) => {
         btnType="facebook"
         color="#4867aa"
         backgroundColor="#e6eaf4"
-        onPress={() => Alert.alert('HI')}
+        onPress={facebookLogin}
       />
 
       <SocialButton
